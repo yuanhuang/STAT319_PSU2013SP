@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>STAT 319 Score Calculator</title>
+<style>
+@import url(css/bootstrap.css);
+</style>
+<meta charset="UTF-8">
+</head>
+<body>
+   <!-- adapted from http://www.personal.psu.edu/yoh5109/319spring2013/code/calculator.html -->
+   <!-- fork me banner -->
+   <a href="https://github.com/maxdeliso/stat319calc"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
+
+   <!-- top row, contains header -->
+
+         <h3><span style="color:#008000;"> Big thanks to Max Deliso for this wonderful calculator!  ---- Yuan  </span></h3>
+
+   <div class="row">
+      <div class="span12">
+         <h2>STAT 319 Grade Calculator</h2>
+      </div>
+    </div>
+
+   <!-- second row, contains assignment count entry and final grade -->
+   <div class="row">
+      <div class="span6">
+         <form>
+            <fieldset>
+               <legend>Number of assignments</legend>
+               <div class="row">
+                  <label class="span2"> homework </label> <label class="span2"> quiz </label>
+               </div>
+               <div class="controls controls-row">
+                  <input
+                     class="span2"
+                     placeholder=".span2"
+                     type="number"
+                     id="i-homework-count"
+                     min="3"
+                     max="32"
+                     value="14"> <input
+                     class="span2"
+                     placeholder=".span2"
+                     type="number"
+                     id="i-quiz-count"
+                     min="3"
+                     max="32"
+                     value="13">
+                  <button
+                     id="b-update-input"
+                     class="span2 btn">update</button>
+               </div>
+            </fieldset>
+         </form>
+      </div>
+      <div class="span6">
+         <label>your grade:</label> <span
+            id="s-grade-output"
+            class="input-xlarge uneditable-input"></span>
+      </div>
+   </div>
+   <!-- third row, contains fields for entering data -->
+   <div class="row">
+      <div
+         class="span4"
+         id="d-homework-scores">
+         <h3>homework</h3>
+      </div>
+      <div
+         class="span4"
+         id="d-quiz-scores">
+         <h3>quiz</h3>
+      </div>
+      <div class="span4">
+         <h3>exam</h3>
+         <div class="input-prepend">
+            <span class="add-on">Midterm 1</span> <input
+               id="i-midterm-1"
+               class="span2"
+               type="number"
+               min="0"
+               max="100"
+               value="0">
+         </div>
+         <div class="input-prepend">
+            <span class="add-on">Midterm 2</span> <input
+               id="i-midterm-2"
+               class="span2"
+               type="number"
+               min="0"
+               max="100"
+               value="0">
+         </div>
+         <div class="input-prepend">
+            <span class="add-on">Final</span> <input
+               id="i-final"
+               class="span2"
+               type="number"
+               min="0"
+               max="100"
+               value="0">
+         </div>
+      </div>
+   </div>
+   <!-- this is purely logical - it is only here to serve as template for the page mutation -->
+   <input
+      id="i-model"
+      class="input-mini"
+      type="number"
+      style="display: none;"
+      min="0"
+      max="100"
+      value="0">
+   <!-- layout and page logic -->
+   <script src="js/jquery-1.9.1.js"></script>
+   <script src="js/bootstrap.js"></script>
+   <script src="js/underscore.js"></script>
+   <script src="js/calcScore.js"></script>
+</body>
+</html>

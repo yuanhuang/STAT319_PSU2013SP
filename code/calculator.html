@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Final grades calculator</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Final grades calculator</h1>
+
+<p>The score is calculated by:There will be two midterms (15% each), a comprehensive final
+exam (30%), homework (25%), quizzes (15%). Final semester grades are assigned according to the scale:</p>
+
+<table>
+<tr>
+ <td> 93 - 100% &nbsp; &nbsp;A </td>  <td>&nbsp; &nbsp;&nbsp; &nbsp; </td>
+<td> 90 - 92% &nbsp; &nbsp;A- </td>  <td> &nbsp; &nbsp;&nbsp; &nbsp;</td>
+<td> 87 - 89% &nbsp; &nbsp;B+ </td>  <td>&nbsp; &nbsp;&nbsp; &nbsp;</td>
+</tr>
+<tr>
+ <td> 83 - 86%  &nbsp; &nbsp;B </td>  <td>&nbsp; &nbsp;&nbsp; &nbsp;</td>
+<td> 80 - 82% &nbsp; &nbsp;B- </td>  <td>&nbsp; &nbsp;&nbsp; &nbsp;</td>
+<td> 77 - 79% &nbsp; &nbsp;C+ </td>  <td>&nbsp; &nbsp;&nbsp; &nbsp;</td>
+</tr>
+<tr>
+ <td> 70 - 76%	 &nbsp; &nbsp;C</td>  <td>&nbsp; &nbsp;&nbsp; &nbsp;</td>
+<td> 60 - 69%  &nbsp; &nbsp;D </td>  <td>&nbsp; &nbsp;&nbsp; &nbsp;</td>
+<td> 0 - 59%  &nbsp; &nbsp;F</td>  <td>&nbsp; &nbsp;&nbsp; &nbsp;</td>
+</tr>
+
+</table>
+
+<pre><code>
+# Drop the lowest homework and quiz
+# No curving.
+
+HW &lt;- c(100,80,50)
+HW &lt;- sort(HW)[-1]                  # drop the lowest homework
+
+QZ&lt;- c(79,99,100,90)
+QZ &lt;- sort(QZ)[-(1:3)]                  # drop the lowest 3 quizzes 
+
+Mid1 &lt;- 98
+Mid2 &lt;- 95
+Final &lt;- 75
+
+T_Num_HW &lt;- 14                      # total number of hw I assign, not the number you hand in.
+T_Num_QZ &lt;- 13                      # total number of quiz I assign, not the number you take
+
+Num_HW &lt;- T_Num_HW - 1              # since we drop 1
+Num_QZ &lt;-  T_Num_QZ - 1             # since we drop 1
+
+YourScore &lt;- 0.25* sum(HW)/Num_HW + 0.15*sum(QZ)/Num_QZ + 0.15*Mid1 + 0.15*Mid2 + 0.3*Final
+
+YourScore &lt;- ceiling(YourScore)     # I will round up!
+
+LetterGrade &lt;- NULL
+
+if (YourScore &gt;= 93){
+   LetterGrade &lt;- &quot;A&quot;
+} else if(YourScore &gt;= 90){
+     LetterGrade &lt;- &quot;A-&quot;
+} else if (YourScore &gt;= 87){
+     LetterGrade &lt;- &quot;B+&quot;
+} else if (YourScore &gt;= 83){
+     LetterGrade &lt;- &quot;B&quot;
+} else if (YourScore &gt;= 80){
+     LetterGrade &lt;- &quot;B-&quot;
+} else if (YourScore &gt;= 77){
+     LetterGrade &lt;- &quot;C+&quot;
+} else if (YourScore &gt;= 70){
+     LetterGrade &lt;- &quot;C&quot;
+} else if (YourScore &gt;= 60){
+     LetterGrade &lt;- &quot;D&quot;
+} else{
+      LetterGrade &lt;- &quot;F&quot;
+}
+
+cat(&quot;Your Score = &quot;, YourScore , &quot;\n&quot;)
+cat(&quot;Hence your final letter Score = &quot;,LetterGrade, &quot;\n&quot;)
+</code></pre>
+
+</body>
+
+</html>
+

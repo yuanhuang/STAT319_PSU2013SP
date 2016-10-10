@@ -1,0 +1,50 @@
+
+<html>
+
+<head>
+<TITLE>
+SP13STAT319PSU
+</TITLE>
+
+ <link rel="stylesheet" href="use.css" type="text/css" />
+
+
+</head>
+
+<br> </br>
+
+<H1 ALIGN=center>
+STAT 319:  Applied Statistics in Science
+</H1>
+<CENTER>
+<h4>Spring 2013</h4>
+</CENTER>
+
+<hr>
+<center>
+<a href="index.html">Syllabus</a>&nbsp;&nbsp;&nbsp;
+<a href="lec.html">Lectures</a>&nbsp;&nbsp;&nbsp;
+<a href="comp.html">Computing</a>&nbsp;&nbsp;&nbsp;
+<a href="hw.html">Assignments</a>&nbsp;&nbsp;&nbsp;
+<a href="readings.html">Readings</a>&nbsp;&nbsp;&nbsp;
+<a href="calendar.html">Calendar </a>&nbsp;&nbsp;&nbsp;
+<a href="ann.html">Announcement</a>&nbsp;&nbsp;&nbsp;
+<hr>
+</center>
+
+<p class="normal"> Computation is not required for this class. However, we will have some demonstrations in the class using R <a href="http://www.r-project.org/" class="small"> http://www.r-project.org/ </a>.  You may use other computing softwares. However, I may not be able to help on if other than R. </p>
+
+<p class="normal"> All the R code I use in class can be found here if you would like to play with it </p>
+
+<p class="normal"><b>Tutorial for R</b> </p>
+  <ul>
+  <li>  <a href="http://www.twotorials.com/" class="small"> Two-minute tutorials for R beginners</a>
+  <li> <a href="http://www.pop.psu.edu/events/2013/r-interest-group" class="small"> R Interest Group @ Penn State</a>
+  <li>  There are also tutorial on specific topic as ANOVA and Regression. I will update  the resource when we come to those partss.
+  </ul>
+
+
+<p class="normal"><b>Tutorial for R</b> </p>
+
+</body>
+</html> 

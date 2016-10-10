@@ -1,0 +1,168 @@
+
+<html>
+<script>
+
+function calculate()
+{
+	var quizzes = new Array();
+	var homework = new Array();
+	var exams = new Array();
+
+	var quizscore = 0;
+	var homeworkscore = 0;
+	var examscore = 0;
+        var exam3score =0 ;
+	var totalscore = 0;
+
+	var quiz1 = document.getElementById('q1').value;
+	var quiz2 = document.getElementById('q2').value;
+	var quiz3 = document.getElementById('q3').value;
+	var quiz4 = document.getElementById('q4').value;
+	var quiz5 = document.getElementById('q5').value;
+
+	var homework1 = document.getElementById('hw1').value;
+	var homework2 = document.getElementById('hw2').value;
+	var homework3 = document.getElementById('hw3').value;
+	var homework4 = document.getElementById('hw4').value;
+	var homework5 = document.getElementById('hw5').value;
+	var homework6 = document.getElementById('hw6').value;
+	var homework7 = document.getElementById('hw7').value;
+	var homework8 = document.getElementById('hw8').value;
+
+	var exam1 = document.getElementById('exam1').value;
+	var exam2 = document.getElementById('exam2').value;
+
+	var exam3 = document.getElementById('exam3').value;
+
+
+	quizzes[0] = quiz1;
+	quizzes[1] = quiz2;
+	quizzes[2] = quiz3;
+	quizzes[3] = quiz4;
+	quizzes[4] = quiz5;
+
+	homework[0] = homework1;
+	homework[1] = homework2;
+	homework[2] = homework3;
+	homework[3] = homework4;
+	homework[4] = homework5;
+	homework[5] = homework6;
+	homework[6] = homework7;
+	homework[7] = homework8;
+
+	exams[0] = exam1;
+	exams[1] = exam2;
+
+
+
+	quizzes = droplowest(quizzes);
+	quizzes = droplowest(quizzes);
+	quizzes = droplowest(quizzes);
+
+	homework = droplowest(homework);
+
+	for(var i = 0; i < quizzes.length; i++)
+	{
+		quizscore += +quizzes[i];
+	}
+	quizscore = quizscore/2;
+
+	for(var j = 0; j < homework.length; j++)
+	{
+		homeworkscore += +homework[j];
+	}
+	homeworkscore = homeworkscore/7;
+
+	for(var k = 0; k < exams.length; k++)
+	{
+		examscore += +exams[k];
+	}
+	examscore = examscore ;
+
+	quizscore = quizscore * .15;
+	homeworkscore = homeworkscore * .25;
+	examscore = examscore * .15;
+        exam3final = exam3 *0.3
+
+	totalscore = quizscore + homeworkscore + examscore + exam3final  ;
+	
+	
+	alert("Grade: " + totalscore);
+}
+
+function droplowest(arrayp)
+{
+	var lowest = 999;
+	var iter = -1;
+	var a;
+
+	for(var i = 0; i < arrayp.length; i++)
+	{
+		if(+arrayp[i] < +lowest)
+		{
+			
+			lowest = +arrayp[i];
+			iter = i;
+			
+		}
+	}
+	
+	a = +arrayp[arrayp.length-1];
+	arrayp[arrayp.length-1] = +arrayp[iter];
+	arrayp[iter] = +a;
+	
+
+	arrayp.pop();
+
+	return arrayp;
+
+}
+
+</script>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+<TITLE>
+Grade Calculator
+</TITLE>
+</head>
+<body>
+Stat 319  Grade Calculator
+
+<br>
+<hr>
+ <ul>
+ <li> A big thank to Henry Fox!
+ <li> How to use:
+ <ul>
+   <li>This calculator should used to calculate the approximate score. Please input the exam, quiz and homework grades you have by April 2nd.</li>
+   <li> For the final part, insert any value to calculate how much you need to get for final to achieve the desired letter grade. </li>
+ </ul>
+ </ul>
+
+<br>
+
+<p>
+
+Quiz 1: <input type="text" name="q1" id="q1"><br>
+Quiz 2: <input type="text" name="q2" id="q2"><br>
+Quiz 3: <input type="text" name="q3" id="q3"><br>
+Quiz 4: <input type="text" name="q4" id="q4"><br>
+Quiz 5: <input type="text" name="q5" id="q5"><br>
+Homework 1: <input type="text" name="hw1" id="hw1"><br>
+Homework 2: <input type="text" name="hw2" id="hw2"><br>
+Homework 3: <input type="text" name="hw3" id="hw3"><br>
+Homework 4: <input type="text" name="hw4" id="hw4"><br>
+Homework 5: <input type="text" name="hw5" id="hw5"><br>
+Homework 6: <input type="text" name="hw6" id="hw6"><br>
+Homework 7: <input type="text" name="hw7" id="hw7"><br>
+Homework 8: <input type="text" name="hw8" id="hw8"><br>
+Exam 1: <input type="text" name="exam1" id="exam1"><br>
+Exam 2: <input type="text" name="exam2" id="exam2"><br>
+Exam 3: <input type="text" name="exam3" id="exam3"><br><br>
+
+<input type="button" value="Calculate" onclick="calculate()">
+
+</p>
+</body>
+</html> 

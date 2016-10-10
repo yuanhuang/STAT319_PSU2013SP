@@ -1,0 +1,70 @@
+﻿@import url(href='http://fonts.googleapis.com/css?family=Elsie');
+@import url(href='http://fonts.googleapis.com/css?family=Donegal+One' );
+@import url(href='http://fonts.googleapis.com/css?family=Monda');
+@import url(http://fonts.googleapis.com/css?family=Tangerine);
+
+
+html {background-color:#C6AEC7}
+html { overflow-y: scroll; }
+body {
+	min-width: 1000px;
+	margin-left: 5%;
+	margin-right: 5%;
+    margin-top:0%;
+ background-color:white ;  /*#EBDDE2*/
+  border-radius: 20px;
+ padding:20px 20px 20px 20px;
+overflow-y: scroll;
+}
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;
+ color: #B93B8F;
+ background-color : #B93B8F;
+ }
+
+p.normal {font-style:normal; color: white;}
+p.italic {font-style:italic; color: white;}
+p.oblique {font-style:oblique;color: white;}
+
+h1 {font-size: 400%;
+   font-family: 'Tangerine', cursive;
+    font-weight:bold;
+    margin-top: 0pt;
+    color: #7D2252;}
+  
+h4 {
+font-family: 'Monda', sans-serif;font-size: 120%
+}
+
+h5 {
+color: blue
+}
+
+
+  
+table{ 
+font-family: 'Monda', sans-serif;
+boder-right:blank;
+}
+
+  table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+
+
+
+ul{ list-style-type: circle}
+  
+a {font-family: 'Monda', sans-serif;}  
+
+a:link {color: #7E354D; text-decoration: none;font-size:110%}
+a:visited {color: black; text-decoration: none}
+a:hover {background: #FF8429; text-decoration: none }
+
+
+
+
+
+
+
